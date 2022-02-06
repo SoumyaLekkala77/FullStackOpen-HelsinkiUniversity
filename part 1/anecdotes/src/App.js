@@ -16,28 +16,28 @@ const App = () => {
     setSelected(randomNum)
   }
   const [points, setPoints] = useState( new Array(anecdotes.length).fill(0) )
-  const [mostVotedAnectode, setMostVotedAnectode] = useState(0)
+  const [mostVotedAnecdote, setMostVotedAnecdote] = useState(0)
   
 
   const vote = () => {
     const copy = {...points}
     copy[selected] += 1
-    if(copy[selected]>copy[mostVotedAnectode])
-    setMostVotedAnectode(selected)
+    if(copy[selected]>copy[mostVotedAnecdote])
+    setMostVotedAnecdote(selected)
     setPoints(copy)
   }
 
   return (
     <>
       <div>
-        <h1>Anectode of the day</h1>{anecdotes[selected]}<p>has {points[selected]} votes</p>
+        <h1>Anecdote of the day</h1>{anecdotes[selected]}<p>has {points[selected]} votes</p>
       </div>
       <div>
-        <button text= "next anectode" onClick={clickHandle}>next anectode</button>
+        <button text= "next anecdote" onClick={clickHandle}>next anecdote</button>
         <button text="vote" onClick= {vote}>vote</button>
-        <h1>Anectode with most votes</h1>
-        {anecdotes[mostVotedAnectode]}
-        <p>has {points[mostVotedAnectode]} votes</p>
+        <h1>Anecdote with most votes</h1>
+        {anecdotes[mostVotedAnecdote]}
+        <p>has {points[mostVotedAnecdote]} votes</p>
       </div>
     </>
   )
