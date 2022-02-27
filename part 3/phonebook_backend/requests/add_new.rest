@@ -1,5 +1,0 @@
-// this should return 200 POST http://localhost:3001/api/persons Content-Type: application/json
-
-{
-    "name":"Sou", "number":"777"
-}
