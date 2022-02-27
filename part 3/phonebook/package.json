@@ -1,7 +1,7 @@
 {
   "name": "phonebook",
   "version": "1.0.0",
-  "description": "phonebook application",
+  "description": "phonebook application for exercise 3",
   "main": "index.js",
   "scripts": {
     "build:ui": "rm -rf build && cd ../../part2/phonebook && npm run build --prod && cp -r build ../../part3/phonebook && rm -rf build && cd ../../part3/phonebook",
@@ -12,12 +12,13 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Soumya Lekkala",
+  "author": "Bipin Khatiwada",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^6.2.3",
+    "mongoose": "^6.1.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
