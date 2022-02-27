@@ -1,13 +1,12 @@
 require("dotenv").config()
 const express = require('express')
-const app = express()
 const morgan = require('morgan')
+const app = express()
 const cors = require('cors')
 const Person = require('./src/models/person')
 
 morgan.token('reqbody', req => JSON.stringify(req.body) ) // morgan token
 const requestLogger = morgan(':method :url :status :res[content-length] - :response-time ms :reqbody')
-
 
 app.use(cors()) // enable cors
 app.use(express.static('build')) // serve static contents from build folder
@@ -30,7 +29,8 @@ app.get("/info", (request, response)=>{
 })
 
 app.get("/api/persons/:id", (request, response, next)=>{
-    Person.findById(request.params.id).then( person => {
+    const id = request.params.id
+    Person.findById(id).then( person => {
         if (person) response.json(person)
         else response.status(404).send(`Person with id ${id} not found.`)
     }).catch( error => next(error))
@@ -53,6 +53,17 @@ app.post("/api/persons", (request, response)=>{
         number: newEntry.number
     } )
     person.save().then( savedPerson => response.json(savedPerson) )
+})
+
+
+app.put("/api/persons/:id", (request, response, next) => {
+    const updateRequest = {
+        name: request.body.name,
+        number: request.body.number
+    }
+    Person.findByIdAndUpdate( request.params.id, updateRequest, {new: true} )
+        .then( updatedPerson => response.json(updatedPerson) )
+        .catch( error => next(error) )
 })
 
 const unknownEndpoint = (request, response) => {
