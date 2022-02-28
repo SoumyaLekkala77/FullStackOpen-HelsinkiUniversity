@@ -1,5 +1,7 @@
 const Blog = require("../models/blog")
 const User = require('../models/user')
+const bcrypt = require('bcryptjs')
+
 
 
 const initialBlogs = [
@@ -58,12 +60,13 @@ const blogsInDb = async () => {
   return blogs.map(blog => blog.toJSON())
 }
 
-const createNewNote = async () => {
+const createNewNote = async (userId) => {
   const newBlog = {
       title: 'temp blog',
-      author: 'ooo',
-      url: 'ppp',
-      likes: 80
+      author: 'soumya',
+      url: 'rrrr',
+      likes: 85,
+      user: userId
     }
   const blog = new Blog(newBlog)
   await blog.save()
@@ -76,6 +79,8 @@ const usersInDb = async () => {
   const users = await User.find({})
   return users.map(u => u.toJSON())
 }
+
+
 
 
 

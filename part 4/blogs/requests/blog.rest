@@ -1,12 +1,10 @@
 POST http://localhost:3000/api/blogs 
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiffffhsfCCJ9.eyJ1c2VybmFtZSI6ImJ1a2V0a2FyYWthcyIsImlkIjoiNjFiM2I1MmEzMTg4NWZlMTI4MzQ1YWYwIiwiaWF0IjoxNjM5MTc0MzI5LCJleHAiXXVXcsdOjE2MzkxNzc5Mjl9.jZf53JytfFs-f3VsDNN2bCQnJFaF814sdlAny0ADamQ
 {
-"author": "Soumya Lekkala", "title": "Heyyy", "url": "yyyy", "likes": 27, "user": "621ca75682754195675de746"
+"author": "Soumya Lekkala", "title": "Heyyy", "url": "yyyy", "likes": 27
 }
-
 ###
-
 
 DELETE http://localhost:3000/api/blogs/621c304adde5225df7840bc0 
 Content-Type: application/json 
