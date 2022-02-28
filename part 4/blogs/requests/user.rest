@@ -2,5 +2,5 @@ POST http://localhost:3000/api/users/
 Content-Type: application/json
 
 {
-"blogs": [], "username": "root", "name": "Superuser", "password": "salainen"
+"blogs": [], "username": "soumya", "name": "Soumya Lekkala", "password": "soumya"
 }
