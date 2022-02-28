@@ -5,7 +5,6 @@ const app = require("../app")
 
 const api = supertest(app)
 const Blog = require("../models/blog")
-const blog = require("../models/blog")
 
 
 
@@ -41,10 +40,10 @@ describe("Getting all blogs", () =>{
 describe("Posting a blog", () => {
   test('a valid blog can be added', async () => {
     const newBlog = {
-      title: 'my story',
-      author: 'Bhih',
-      url: 'wwwwww',
-      likes: 85
+      title: 'adad',
+      author: 'ffff',
+      url: 'yy',
+      likes: 77
     }
   
     await api
@@ -65,9 +64,9 @@ describe("Posting a blog", () => {
 
   test('a blog without likes can be added', async () => {
     const newBlog = {
-      title: 'my toy story',
-      author: 'dddd',
-      url: 'wwwwww'
+      title: 'dgsg',
+      author: 'sdgg',
+      url: 'rrr'
     }
   
     const response = await api
@@ -82,9 +81,9 @@ describe("Posting a blog", () => {
   
   test('a blog without title will not be be added', async () => {
     const newBlog = {
-      author: 'dddd',
-      url: 'wwwwww',
-      likes: 10
+      author: 'sfd',
+      url: 'fff',
+      likes: 100
     }
   
     const response = await api
@@ -99,8 +98,8 @@ describe("Posting a blog", () => {
   test('a blog without url will not be be added', async () => {
     const newBlog = {
       title:"Story of my life",
-      author: 'dddd',
-      likes: 10
+      author: 'Sout',
+      likes: 20
     }
   
     const response = await api
@@ -131,8 +130,8 @@ describe("Updating a blog ",  () => {
     const idTobeUpdated = await helper.createNewNote()
     const newBlog = {
       title: 'Updated title',
-      author: 'Bhih',
-      url: 'wwwwww',
+      author: 'Sou',
+      url: 'ttt',
       likes: 10
     }
     await api
