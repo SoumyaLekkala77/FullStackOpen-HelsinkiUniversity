@@ -38,7 +38,7 @@ test('blogs have id property', async () => {
 test('a valid blog can be added', async () => {
   const newBlog = {
     title: 'my story',
-    author: 'Buket Karakaş',
+    author: 'Bhhs',
     url: 'wwwwww',
     likes: 85
   }
@@ -62,7 +62,7 @@ test('a valid blog can be added', async () => {
 test('a blog without likes can be added', async () => {
   const newBlog = {
     title: 'my toy story',
-    author: 'Berk Karakaş',
+    author: 'Bhhs',
     url: 'wwwwww'
   }
 
@@ -73,6 +73,38 @@ test('a blog without likes can be added', async () => {
     .expect('Content-Type', /application\/json/)
 
   expect(response.body.likes).toBe(0)
+  
+})
+
+test('a blog without title will not be be added', async () => {
+  const newBlog = {
+    author: 'Bed',
+    url: 'wwwwww',
+    likes: 10
+  }
+
+  const response = await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(400)
+    .expect('Content-Type', /application\/json/)
+
+  
+})
+
+test('a blog without url will not be be added', async () => {
+  const newBlog = {
+    title:"Story of my life",
+    author: 'Bed',
+    likes: 10
+  }
+
+  const response = await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(400)
+    .expect('Content-Type', /application\/json/)
+
   
 })
 
