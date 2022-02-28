@@ -99,7 +99,7 @@ describe("Posting a blog", () => {
   test('a blog without url will not be be added', async () => {
     const newBlog = {
       title:"Story of my life",
-      author: 'dddd,
+      author: 'dddd',
       likes: 10
     }
   
