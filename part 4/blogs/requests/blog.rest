@@ -1,16 +1,19 @@
-POST http://localhost:3000/api/blogs Content-Type: application/json
+POST http://localhost:3000/api/blogs 
+Content-Type: application/json
 
 {
-"author": "Soumya Lekkala", "title": "Heyyy", "url": "yyyy", "likes": 27, "user": "621c32e6018fd572b17984e4"
+"author": "Soumya Lekkala", "title": "Heyyy", "url": "yyyy", "likes": 27, "user": "621ca75682754195675de746"
 }
 
 ###
 
-DELETE http://localhost:3000/api/blogs/621c304adde5225df7840bc0 Content-Type: application/json
+DELETE http://localhost:3000/api/blogs/621c304adde5225df7840bc0 
+Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/api/blogs/621c32e6018fd572b17984e4 Content-Type: application/json
+PUT http://localhost:3000/api/blogs/621c32e6018fd572b17984e4 
+Content-Type: application/json
 
 {
 "title": "Hey there", "author": "Buggal", "url": "sdfs", "likes": 27
